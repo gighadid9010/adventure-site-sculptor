@@ -1,9 +1,12 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
+import { useWallet } from '@solana/wallet-adapter-react';
+import { Rocket, Gem, TrendingUp, Bomb } from 'lucide-react';
 
 const HeroSection = () => {
   const bubblesRef = useRef<HTMLDivElement>(null);
+  const { connected } = useWallet();
 
   useEffect(() => {
     // Create animated bubbles
@@ -60,39 +63,46 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden bg-ocean-gradient">
+    <section id="home" className="relative min-h-screen overflow-hidden bg-solana-gradient">
       {/* Bubbles container */}
       <div ref={bubblesRef} className="absolute inset-0 pointer-events-none z-0"></div>
       
       {/* Animated wave overlays */}
-      <div className="absolute inset-x-0 top-1/3 h-[300px] ocean-waves z-0"></div>
-      <div className="absolute inset-x-0 top-2/3 h-[200px] ocean-waves z-0" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute inset-x-0 top-1/3 h-[300px] crypto-waves z-0"></div>
+      <div className="absolute inset-x-0 top-2/3 h-[200px] crypto-waves z-0" style={{ animationDelay: '2s' }}></div>
       
       {/* Content */}
       <div className="container mx-auto px-4 pt-32 pb-20 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="lg:w-1/2 text-center lg:text-left">
-            <span className="inline-block py-1 px-3 mb-6 rounded-full bg-white/10 backdrop-blur border border-white/20 text-white font-medium animate-slide-in-bottom" style={{ animationDelay: '0.1s' }}>
-              Dive into a new adventure
+            <span className="inline-block py-1 px-3 mb-6 rounded-full bg-white/10 backdrop-blur border border-purple-500/20 text-white font-medium animate-slide-in-bottom" style={{ animationDelay: '0.1s' }}>
+              Crypto-themed 2D arcade game
             </span>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-slide-in-bottom" style={{ animationDelay: '0.3s' }}>
-              Welcome to <br />
-              <span className="relative">
-                SolSharks
-                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-coral-light to-coral rounded-full"></div>
+              SHARKIE: <br />
+              <span className="relative text-solana-purple">
+                Crypto Waters
+                <span className="text-3xl ml-2">🦈 🪙</span>
+                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full"></div>
               </span>
             </h1>
             
             <p className="text-lg md:text-xl text-white/80 mb-8 max-w-xl animate-slide-in-bottom" style={{ animationDelay: '0.5s' }}>
-              Explore the depths of the ocean, collect rare treasures, and build your underwater empire in this exciting aquatic adventure game.
+              Swim through digital oceans! Collect meme coins, dodge bear markets, and ride bull runs in this lighthearted crypto parody on Solana.
             </p>
             
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-slide-in-bottom" style={{ animationDelay: '0.7s' }}>
-              <Button className="btn-primary">
-                Play Now
-              </Button>
-              <Button variant="outline" className="btn-secondary">
+              {!connected ? (
+                <Button className="btn-connect-wallet">
+                  Connect Wallet
+                </Button>
+              ) : (
+                <Button className="btn-play-now">
+                  Play Now
+                </Button>
+              )}
+              <Button variant="outline" className="btn-learn-more">
                 Learn More
               </Button>
             </div>
@@ -100,18 +110,35 @@ const HeroSection = () => {
           
           <div className="lg:w-1/2 relative animate-slide-in-right" style={{ animationDelay: '0.5s' }}>
             <div className="relative">
-              <div className="absolute inset-0 bg-ocean-light/20 rounded-full blur-3xl"></div>
+              <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-3xl"></div>
               <img 
                 src="/lovable-uploads/bfa664cf-8e11-4176-8653-1e1f8e129bff.png" 
-                alt="SolSharks Hero Character" 
+                alt="SHARKIE Crypto Game Character" 
                 className="relative z-10 w-[350px] h-auto mx-auto lg:mx-0 animate-float shark-shadow"
               />
             </div>
             
-            {/* Floating decorative elements */}
-            <div className="absolute top-[10%] left-[10%] w-12 h-12 bg-coral-light/30 rounded-full blur-md animate-float-slow"></div>
-            <div className="absolute bottom-[15%] right-[5%] w-16 h-16 bg-seaweed-light/30 rounded-full blur-md animate-float-fast"></div>
-            <div className="absolute top-[40%] right-[15%] w-8 h-8 bg-ocean-light/30 rounded-full blur-md animate-float"></div>
+            {/* Power-up icons */}
+            <div className="absolute top-[10%] left-[10%] p-2 bg-black/50 rounded-full animate-float-slow">
+              <Rocket size={24} className="text-purple-400" />
+            </div>
+            <div className="absolute bottom-[15%] right-[5%] p-2 bg-black/50 rounded-full animate-float-fast">
+              <Gem size={24} className="text-blue-400" />
+            </div>
+            <div className="absolute top-[40%] right-[15%] p-2 bg-black/50 rounded-full animate-float">
+              <TrendingUp size={24} className="text-green-400" />
+            </div>
+            <div className="absolute bottom-[40%] left-[25%] p-2 bg-black/50 rounded-full animate-pulse">
+              <Bomb size={24} className="text-red-400" />
+            </div>
+            
+            {/* Floating coins */}
+            <div className="absolute top-[20%] right-[35%] w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center animate-float-coin">
+              <span className="text-xs font-bold">$</span>
+            </div>
+            <div className="absolute bottom-[25%] left-[15%] w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center animate-float-coin-reverse">
+              <span className="text-xs font-bold">$</span>
+            </div>
           </div>
         </div>
       </div>
