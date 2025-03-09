@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 196 100% 45%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -32,22 +33,15 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -96,6 +90,62 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
+}
+
+@layer components {
+  .glassmorphism {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+  
+  .btn-primary {
+    @apply px-8 py-3 rounded-full font-bold text-white transition-all duration-300 bg-gradient-to-r from-ocean to-seaweed shadow-lg hover:shadow-xl hover:scale-105 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-2 rounded-full font-semibold text-ocean bg-white/80 backdrop-blur-sm transition-all duration-300 shadow-md hover:shadow-lg hover:bg-white hover:scale-105 active:scale-95;
+  }
+  
+  .feature-card {
+    @apply rounded-2xl overflow-hidden glassmorphism p-6 flex flex-col items-center transition-all duration-500 hover:scale-105 hover:shadow-xl;
+  }
+  
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold mb-8 text-center relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-ocean rounded-full;
+  }
+  
+  .bubble {
+    @apply absolute rounded-full bg-white/20 backdrop-blur-sm z-0;
+  }
+
+  .shark-shadow {
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.2));
+  }
+}
+
+/* Animated background wave effect */
+.ocean-waves {
+  background: linear-gradient(180deg, rgba(14, 165, 233, 0.3) 0%, rgba(12, 74, 110, 0.15) 100%);
+  transform-origin: bottom;
+  animation: wave 25s ease-in-out infinite alternate;
+}
+
+/* Water shimmer effect */
+.water-shimmer {
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 25%, 
+    rgba(255, 255, 255, 0.2) 50%, 
+    rgba(255, 255, 255, 0.1) 75%, 
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
 }
