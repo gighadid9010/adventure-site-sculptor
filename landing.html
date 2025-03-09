@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHARKIE: Crypto Waters</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a0b2e, #6a0dad);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: url('../assets/sharkie/swim/0.png') no-repeat center;
+            background-size: contain;
+            border-bottom: 4px solid #fff;
+            min-height: 300px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px #000;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #fff;
+            color: #6a0dad;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: #6a0dad;
+            color: #fff;
+            box-shadow: 0 0 15px #fff;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px #000;
+        }
+
+        .intro, .why-play, .how-to {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .intro img {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+
+        .why-play .grid, .how-to .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .card ul li {
+            margin: 5px 0;
+        }
+
+        .card img {
+            max-width: 100px;
+            margin: 10px auto;
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1a0b2e;
+            border-top: 4px solid #fff;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes swim {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(20px); }
+            100% { transform: translateX(0); }
+        }
+
+        .sharkie {
+            animation: swim 2s infinite ease-in-out;
+            font-size: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            h2 { font-size: 1.8rem; }
+            .cta-btn { padding: 10px 20px; }
+            header { min-height: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1><span class="sharkie">🦈</span> SHARKIE: Crypto Waters 🪙</h1>
+        <p>Solana Shark Art</p>
+        <a href="#" class="cta-btn">Play Now</a>
+    </header>
+
+    <!-- Intro Section -->
+    <section class="intro">
+        <h2>Dive In!</h2>
+        <p>A crypto-themed 2D arcade game where Sharkie swims through digital oceans! Collect meme coins, dodge bear markets, and ride bull runs in this lighthearted crypto parody.</p>
+        <img src="assets/sharkie/idle/0.png" alt="Sharkie">
+    </section>
+
+    <!-- Why Play Section -->
+    <section class="why-play">
+        <h2>🌊 Why Crypto Fans Will Love It</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Crypto Aesthetics</h3>
+                <ul>
+                    <li>Solana-themed purple/black gradients</li>
+                    <li>Pixel art enemies: "FUD Fish", "Shitcoin Jellyfish"</li>
+                    <li>Backgrounds: Blockchain reefs, NFT coral, Moonbase final level</li>
+                </ul>
+                <img src="assets/sharkie/swim/1.png" alt="Sharkie Swim 1">
+            </div>
+            <div class="card">
+                <h3>Gameplay Memes</h3>
+                <ul>
+                    <li>Collect $SHARK tokens (Solana logo variants)</li>
+                    <li>Powerups:</li>
+                    <li>🚀 "To the Moon" Rocket Boost</li>
+                    <li>💎 "Diamond Hands" Shield</li>
+                    <li>📈 "Bull Run" Speed Burst</li>
+                    <li>💣 "Rug Pull" Bomb</li>
+                </ul>
+                <img src="assets/sharkie/attack/0.png" alt="Sharkie Attack">
+            </div>
+            <div class="card">
+                <h3>Crypto Culture Easter Eggs</h3>
+                <ul>
+                    <li>Loading screen crypto memes (Doge, "Wen Moon?")</li>
+                    <li>Sound effects: Coin sounds = cha-ching/money printer</li>
+                    <li>"Satoshi" hidden character</li>
+                </ul>
+                <img src="assets/sharkie/swim/2.png" alt="Sharkie Swim 2">
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Play Section -->
+    <section class="how-to">
+        <h2>🕹️ How to Play (Web2 Edition)</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Controls</h3>
+                <ul>
+                    <li>← → : Swim through market volatility</li>
+                    <li>↑ : Jump pumps</li>
+                    <li>↓ : Dive dips</li>
+                    <li>SPACE : Bubble attack (launch "HODL bubbles")</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Objective</h3>
+                <ul>
+                    <li>Collect shiny $SHARK coins</li>
+                    <li>Avoid "Bear Trap" obstacles</li>
+                    <li>Reach "All Time High" water levels</li>
+                    <li>Unlock crypto memes in gallery</li>
+                </ul>
+                <img src="../assets/sharkie/swim/3.png" alt="Sharkie Swim 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><a href="https://github.com/Yadesailtd/SolSharks">GitHub</a> | Built with 💜 on Solana</p>
+        <p><a href="#" class="cta-btn">Play Now</a></p>
+        <p>No real $SHARK tokens were harmed in the making of this game.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const playButtons = document.querySelectorAll(".cta-btn");
+            playButtons.forEach(btn => {
+                btn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    alert("Ready to swim? Connect your game here soon!");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

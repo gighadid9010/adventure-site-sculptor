@@ -98,9 +98,10 @@ const HeroSection = () => {
                   Connect Wallet
                 </Button>
               ) : (
-                <Button className="btn-play-now">
-                  Play Now
+                <Button className="btn-play-now" onClick={() => window.location.href = '/game.html'}>
+                Play Now
                 </Button>
+
               )}
               <Button variant="outline" className="btn-learn-more">
                 Learn More
