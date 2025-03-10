@@ -39,7 +39,7 @@ const HeroSection = () => {
           
           <div className="lg:w-1/2 relative">
             <img 
-              src="/lovable-uploads/430feb10-ca05-4f4f-b711-08b6a9f9942d.png" 
+              src="/lovable-uploads/5590c2b2-a716-49be-8588-7d5c7d34f175.png" 
               alt="SHARKIE Crypto Game" 
               className="relative z-10 w-full max-w-md mx-auto h-auto"
             />
