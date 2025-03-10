@@ -2,8 +2,6 @@
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
-import FeaturesSection from '@/components/FeaturesSection';
-import CharacterSection from '@/components/CharacterSection';
 
 const Index = () => {
   useEffect(() => {
@@ -29,11 +27,15 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-dark-charcoal">
+    <div className="min-h-screen overflow-x-hidden bg-dark-charcoal" 
+      style={{ 
+        backgroundImage: `url('/lovable-uploads/4a941966-c6af-44b5-a2a6-306144d0e2a2.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}>
       <Navbar />
       <HeroSection />
-      <FeaturesSection />
-      <CharacterSection />
+      {/* FeaturesSection and CharacterSection have been removed as requested */}
     </div>
   );
 };
