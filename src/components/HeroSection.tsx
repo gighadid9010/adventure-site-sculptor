@@ -63,7 +63,7 @@ const HeroSection = () => {
   };
 
   const handlePlayNow = () => {
-    window.location.href = '/game.html';
+    window.location.href = 'game.html';
   };
 
   return (
@@ -116,9 +116,9 @@ const HeroSection = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-3xl"></div>
               <img 
-                src="/lovable-uploads/bfa664cf-8e11-4176-8653-1e1f8e129bff.png" 
-                alt="SHARKIE Crypto Game Character" 
-                className="relative z-10 w-[350px] h-auto mx-auto lg:mx-0 animate-float shark-shadow"
+                src="/lovable-uploads/430feb10-ca05-4f4f-b711-08b6a9f9942d.png" 
+                alt="SHARKIE Crypto Game" 
+                className="relative z-10 w-full h-auto mx-auto lg:mx-0"
               />
             </div>
             
@@ -134,14 +134,6 @@ const HeroSection = () => {
             </div>
             <div className="absolute bottom-[40%] left-[25%] p-2 bg-black/50 rounded-full animate-pulse">
               <Bomb size={24} className="text-red-400" />
-            </div>
-            
-            {/* Floating coins */}
-            <div className="absolute top-[20%] right-[35%] w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center animate-float-coin">
-              <span className="text-xs font-bold">$</span>
-            </div>
-            <div className="absolute bottom-[25%] left-[15%] w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center animate-float-coin-reverse">
-              <span className="text-xs font-bold">$</span>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Wallet } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { useWalletModal } from '@solana/wallet-adapter-react-ui';
 import { WalletButton } from '@/components/WalletButton';
@@ -22,10 +22,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const openWalletModal = () => {
-    setVisible(true);
-  };
-
   return (
     <nav
       className={cn(
@@ -43,7 +39,7 @@ const Navbar = () => {
           <NavLink href="#home">Home</NavLink>
           <NavLink href="#features">Features</NavLink>
           <NavLink href="#characters">Characters</NavLink>
-          <NavLink href="#newsletter">Community</NavLink>
+          <NavLink href="#community">Community</NavLink>
           <WalletButton />
         </div>
 
@@ -65,7 +61,7 @@ const Navbar = () => {
           <NavLink href="#home" mobile onClick={() => setIsMenuOpen(false)}>Home</NavLink>
           <NavLink href="#features" mobile onClick={() => setIsMenuOpen(false)}>Features</NavLink>
           <NavLink href="#characters" mobile onClick={() => setIsMenuOpen(false)}>Characters</NavLink>
-          <NavLink href="#newsletter" mobile onClick={() => setIsMenuOpen(false)}>Community</NavLink>
+          <NavLink href="#community" mobile onClick={() => setIsMenuOpen(false)}>Community</NavLink>
           <div className="py-2">
             <WalletButton isMobile />
           </div>

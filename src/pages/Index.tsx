@@ -4,8 +4,6 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import CharacterSection from '@/components/CharacterSection';
-import NewsletterSection from '@/components/NewsletterSection';
-import Footer from '@/components/Footer';
 
 const Index = () => {
   useEffect(() => {
@@ -56,8 +54,6 @@ const Index = () => {
       <HeroSection />
       <FeaturesSection />
       <CharacterSection />
-      <NewsletterSection />
-      <Footer />
     </div>
   );
 };
