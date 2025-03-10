@@ -62,6 +62,10 @@ const HeroSection = () => {
     }, (duration + delay) * 1000);
   };
 
+  const handlePlayNow = () => {
+    window.location.href = '/game.html';
+  };
+
   return (
     <section id="home" className="relative min-h-screen overflow-hidden bg-solana-gradient">
       {/* Bubbles container */}
@@ -98,10 +102,9 @@ const HeroSection = () => {
                   Connect Wallet
                 </Button>
               ) : (
-                <Button className="btn-play-now" onClick={() => window.location.href = '/game.html'}>
-                Play Now
+                <Button className="btn-play-now" onClick={handlePlayNow}>
+                  Play Now
                 </Button>
-
               )}
               <Button variant="outline" className="btn-learn-more">
                 Learn More

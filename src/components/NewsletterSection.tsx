@@ -57,7 +57,7 @@ const NewsletterSection = () => {
             Subscribe to our newsletter to receive game updates, special events, and exclusive offers.
           </p>
           
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto mb-12">
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
             <Input
               type="email"
               placeholder="Enter your email"
@@ -73,21 +73,6 @@ const NewsletterSection = () => {
               {isSubmitting ? "Subscribing..." : "Subscribe Now"}
             </Button>
           </form>
-          
-          <div className="flex flex-wrap justify-center gap-8">
-            <div className="flex flex-col items-center">
-              <span className="text-4xl font-bold mb-2">50K+</span>
-              <span className="text-white/80">Active Players</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <span className="text-4xl font-bold mb-2">25K+</span>
-              <span className="text-white/80">Community Members</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <span className="text-4xl font-bold mb-2">100+</span>
-              <span className="text-white/80">Collectible Items</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

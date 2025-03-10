@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Facebook, Twitter, Instagram, Github, Youtube } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -33,27 +32,6 @@ const Footer = () => {
                 <li><a href="#" className="text-gray-500 hover:text-ocean transition-colors">Privacy Policy</a></li>
                 <li><a href="#" className="text-gray-500 hover:text-ocean transition-colors">Terms of Service</a></li>
               </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-bold mb-3 text-gray-800">Connect</h4>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-ocean transition-colors">
-                  <Facebook size={20} />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-ocean transition-colors">
-                  <Twitter size={20} />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-ocean transition-colors">
-                  <Instagram size={20} />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-ocean transition-colors">
-                  <Youtube size={20} />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-ocean transition-colors">
-                  <Github size={20} />
-                </a>
-              </div>
             </div>
           </div>
         </div>

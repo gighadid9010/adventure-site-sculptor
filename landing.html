@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +23,7 @@
         header {
             text-align: center;
             padding: 50px 20px;
-            background: url('../assets/sharkie/swim/0.png') no-repeat center;
+            background: url('assets/sharkie/swim/0.png') no-repeat center;
             background-size: contain;
             border-bottom: 4px solid #fff;
             min-height: 300px;
@@ -155,7 +156,7 @@
     <header>
         <h1><span class="sharkie">🦈</span> SHARKIE: Crypto Waters 🪙</h1>
         <p>Solana Shark Art</p>
-        <a href="#" class="cta-btn">Play Now</a>
+        <a href="game.html" class="cta-btn">Play Now</a>
     </header>
 
     <!-- Intro Section -->
@@ -223,15 +224,15 @@
                     <li>Reach "All Time High" water levels</li>
                     <li>Unlock crypto memes in gallery</li>
                 </ul>
-                <img src="../assets/sharkie/swim/3.png" alt="Sharkie Swim 3">
+                <img src="assets/sharkie/swim/3.png" alt="Sharkie Swim 3">
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p><a href="https://github.com/Yadesailtd/SolSharks">GitHub</a> | Built with 💜 on Solana</p>
-        <p><a href="#" class="cta-btn">Play Now</a></p>
+        <p>Built with 💜 on Solana</p>
+        <p><a href="game.html" class="cta-btn">Play Now</a></p>
         <p>No real $SHARK tokens were harmed in the making of this game.</p>
     </footer>
 
@@ -240,8 +241,7 @@
             const playButtons = document.querySelectorAll(".cta-btn");
             playButtons.forEach(btn => {
                 btn.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    alert("Ready to swim? Connect your game here soon!");
+                    // Allow normal link behavior to navigate to game.html
                 });
             });
         });
