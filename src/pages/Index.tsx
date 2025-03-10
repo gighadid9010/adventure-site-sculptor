@@ -14,31 +14,11 @@ const Index = () => {
         const target = document.querySelector(this.getAttribute('href') || '');
         if (target) {
           window.scrollTo({
-            top: target.getBoundingClientRect().top + window.scrollY - 100,
+            top: target.getBoundingClientRect().top + window.scrollY - 70,
             behavior: 'smooth'
           });
         }
       });
-    });
-    
-    // Fade in elements on scroll
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-in');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-    
-    document.querySelectorAll('.fade-in-section').forEach(section => {
-      observer.observe(section);
     });
     
     return () => {
