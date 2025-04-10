@@ -27,7 +27,10 @@ export const WalletButton = ({ isMobile = false }: WalletButtonProps) => {
     <Button 
       onClick={openWalletModal}
       className={cn(
-        connected ? 'bg-solana-purple hover:bg-solana-purple/90' : 'bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900',
+        'rounded-full px-6 py-2 font-medium text-sm transition-all duration-300',
+        connected 
+          ? 'bg-purple-600 hover:bg-purple-700 text-white' 
+          : 'bg-gradient-to-r from-purple-600 to-purple-400 hover:from-purple-700 hover:to-purple-500 text-white',
         isMobile && 'w-full'
       )}
     >
