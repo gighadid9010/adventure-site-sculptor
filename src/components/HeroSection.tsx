@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { ArrowRight } from 'lucide-react';
+import { WalletButton } from '@/components/WalletButton';
 
 const HeroSection = () => {
   const { connected } = useWallet();
@@ -28,10 +29,7 @@ const HeroSection = () => {
             
             <div className="flex flex-wrap gap-4">
               {!connected ? (
-                <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg rounded-full group">
-                  Connect Wallet
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <WalletButton />
               ) : (
                 <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg rounded-full group" onClick={handlePlayNow}>
                   Play Now
