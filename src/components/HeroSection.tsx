@@ -42,11 +42,11 @@ const HeroSection = () => {
       </div>
       
       {/* Game image */}
-      <div className="absolute right-0 bottom-0 w-1/2 h-full z-0 hidden lg:block">
+      <div className="absolute right-0 bottom-0 w-1/2 h-full z-0 hidden lg:block flex items-center justify-center">
         <img 
           src="/lovable-uploads/5590c2b2-a716-49be-8588-7d5c7d34f175.png" 
           alt="SHARKIE Crypto Game" 
-          className="object-contain w-full h-full"
+          className="object-contain max-w-full max-h-full mx-auto"
         />
       </div>
       
