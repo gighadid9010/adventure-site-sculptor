@@ -46,7 +46,7 @@ const HeroSection = () => {
         <img 
           src="/lovable-uploads/5590c2b2-a716-49be-8588-7d5c7d34f175.png" 
           alt="SHARKIE Crypto Game" 
-          className="object-contain w-full h-full transform translate-x-1/4 translate-y-1/4"
+          className="object-contain w-full h-full"
         />
       </div>
       
