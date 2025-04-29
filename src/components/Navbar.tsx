@@ -3,10 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import { WalletButton } from '@/components/WalletButton';
+import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
+import { useWallet } from '@solana/wallet-adapter-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { connected } = useWallet();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,7 +24,7 @@ const Navbar = () => {
     <nav
       className={cn(
         'fixed top-0 left-0 w-full z-50 transition-all duration-300',
-        isScrolled ? 'py-2 bg-black/90 backdrop-blur-sm' : 'py-4 bg-transparent'
+        isScrolled ? 'py-3 glassmorphism-dark' : 'py-5 bg-transparent'
       )}
     >
       <div className="container mx-auto flex justify-between items-center px-4">
@@ -30,9 +33,16 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6">
+        <div className="hidden md:flex items-center space-x-8">
           <NavLink href="#home">Home</NavLink>
-          <WalletButton />
+          <NavLink href="#features">Features</NavLink>
+          <NavLink href="#characters">Characters</NavLink>
+          <NavLink href="#newsletter">Community</NavLink>
+          {connected ? (
+            <WalletMultiButton className="!bg-purple-600 hover:!bg-purple-700 !rounded-full !font-medium" />
+          ) : (
+            <WalletButton />
+          )}
         </div>
 
         {/* Mobile Navigation Toggle */}
@@ -46,13 +56,20 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div className={cn(
-        'md:hidden absolute top-full left-0 w-full bg-black/90 backdrop-blur-sm transition-all duration-300 overflow-hidden',
-        isMenuOpen ? 'max-h-[180px] py-2' : 'max-h-0 py-0'
+        'md:hidden absolute top-full left-0 w-full glassmorphism-dark transition-all duration-300',
+        isMenuOpen ? 'max-h-[300px] py-4' : 'max-h-0 py-0 overflow-hidden'
       )}>
-        <div className="container mx-auto flex flex-col space-y-2 px-4">
+        <div className="container mx-auto flex flex-col space-y-4 px-4">
           <NavLink href="#home" mobile onClick={() => setIsMenuOpen(false)}>Home</NavLink>
-          <div className="py-1">
-            <WalletButton isMobile />
+          <NavLink href="#features" mobile onClick={() => setIsMenuOpen(false)}>Features</NavLink>
+          <NavLink href="#characters" mobile onClick={() => setIsMenuOpen(false)}>Characters</NavLink>
+          <NavLink href="#newsletter" mobile onClick={() => setIsMenuOpen(false)}>Community</NavLink>
+          <div className="py-2">
+            {connected ? (
+              <WalletMultiButton className="!bg-purple-600 hover:!bg-purple-700 !rounded-full !w-full !font-medium" />
+            ) : (
+              <WalletButton isMobile />
+            )}
           </div>
         </div>
       </div>
@@ -73,11 +90,12 @@ const NavLink = ({ href, children, mobile, onClick }: NavLinkProps) => {
       href={href}
       onClick={onClick}
       className={cn(
-        'font-medium text-white/90 hover:text-white transition-colors',
-        mobile && 'py-1'
+        'font-medium text-purple-100/90 hover:text-white transition-colors relative group',
+        mobile && 'py-2'
       )}
     >
       {children}
+      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 transition-all group-hover:w-full"></span>
     </a>
   );
 };
