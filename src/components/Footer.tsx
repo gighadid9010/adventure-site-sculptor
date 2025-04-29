@@ -3,42 +3,30 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-black/80 py-12 backdrop-blur-sm border-t border-purple-500/10">
+    <footer className="bg-blue-600 py-8 text-white">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="text-center md:text-left">
-            <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-100 mb-2">SHARKIE</h3>
-            <p className="text-purple-100/50 max-w-xs">
-              Dive into an underwater crypto adventure like no other.
-            </p>
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="mb-4 md:mb-0">
+            <h3 className="text-2xl font-bold">$SHAK</h3>
+            <p className="text-blue-100">Swimming on Solana Ocean</p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-8 sm:gap-16">
+          <div className="flex flex-col md:flex-row gap-8">
             <div>
-              <h4 className="font-bold mb-3 text-white">Explore</h4>
-              <ul className="space-y-2">
-                <li><a href="#home" className="text-purple-100/50 hover:text-purple-100 transition-colors">Home</a></li>
-                <li><a href="#features" className="text-purple-100/50 hover:text-purple-100 transition-colors">Features</a></li>
-                <li><a href="#characters" className="text-purple-100/50 hover:text-purple-100 transition-colors">Characters</a></li>
-                <li><a href="#newsletter" className="text-purple-100/50 hover:text-purple-100 transition-colors">Community</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-bold mb-3 text-white">Resources</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-purple-100/50 hover:text-purple-100 transition-colors">Help Center</a></li>
-                <li><a href="#" className="text-purple-100/50 hover:text-purple-100 transition-colors">Blog</a></li>
-                <li><a href="#" className="text-purple-100/50 hover:text-purple-100 transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="text-purple-100/50 hover:text-purple-100 transition-colors">Terms of Service</a></li>
+              <h4 className="font-bold mb-2">Quick Links</h4>
+              <ul className="space-y-1">
+                <li><a href="#" className="text-blue-100 hover:text-white">Home</a></li>
+                <li><a href="#tokenomics" className="text-blue-100 hover:text-white">Tokenomics</a></li>
+                <li><a href="#supply" className="text-blue-100 hover:text-white">Token Supply</a></li>
+                <li><a href="#community" className="text-blue-100 hover:text-white">Community</a></li>
               </ul>
             </div>
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-purple-500/10 text-center">
-          <p className="text-purple-100/50 text-sm">
-            &copy; {new Date().getFullYear()} SHARKIE: Crypto Waters. Built with 💜 on Solana.
+        <div className="mt-8 pt-4 border-t border-blue-500 text-center">
+          <p className="text-blue-100">
+            &copy; {new Date().getFullYear()} SHAK Token. All rights reserved.
           </p>
         </div>
       </div>

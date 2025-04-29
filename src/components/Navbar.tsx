@@ -1,19 +1,16 @@
 
-import React, { useEffect, useState } from 'react';
-import { cn } from '@/lib/utils';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { WalletButton } from '@/components/WalletButton';
-import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
-import { useWallet } from '@solana/wallet-adapter-react';
+import { WalletButton } from './WalletButton';
+import { cn } from '@/lib/utils';
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { connected } = useWallet();
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -21,82 +18,52 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav
-      className={cn(
-        'fixed top-0 left-0 w-full z-50 transition-all duration-300',
-        isScrolled ? 'py-3 glassmorphism-dark' : 'py-5 bg-transparent'
-      )}
-    >
-      <div className="container mx-auto flex justify-between items-center px-4">
-        <div className="flex items-center">
-          <span className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-purple-300 bg-clip-text text-transparent">SHARKIE</span>
-        </div>
+    <nav className={cn(
+      "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+      isScrolled ? "bg-blue-500/90 py-2 shadow-md" : "bg-transparent py-4"
+    )}>
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center">
+          {/* Logo */}
+          <div className="text-2xl font-bold text-white">
+            $SHAK
+          </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
-          <NavLink href="#home">Home</NavLink>
-          <NavLink href="#features">Features</NavLink>
-          <NavLink href="#characters">Characters</NavLink>
-          <NavLink href="#newsletter">Community</NavLink>
-          {connected ? (
-            <WalletMultiButton className="!bg-purple-600 hover:!bg-purple-700 !rounded-full !font-medium" />
-          ) : (
+          {/* Desktop Menu */}
+          <div className="hidden md:flex space-x-8 items-center">
+            <a href="#" className="text-white hover:text-amber-200 transition-colors">Home</a>
+            <a href="#tokenomics" className="text-white hover:text-amber-200 transition-colors">Tokenomics</a>
+            <a href="#supply" className="text-white hover:text-amber-200 transition-colors">Supply</a>
+            <a href="#community" className="text-white hover:text-amber-200 transition-colors">Community</a>
             <WalletButton />
-          )}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
 
-        {/* Mobile Navigation Toggle */}
-        <button 
-          className="md:hidden text-white p-2"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      <div className={cn(
-        'md:hidden absolute top-full left-0 w-full glassmorphism-dark transition-all duration-300',
-        isMenuOpen ? 'max-h-[300px] py-4' : 'max-h-0 py-0 overflow-hidden'
-      )}>
-        <div className="container mx-auto flex flex-col space-y-4 px-4">
-          <NavLink href="#home" mobile onClick={() => setIsMenuOpen(false)}>Home</NavLink>
-          <NavLink href="#features" mobile onClick={() => setIsMenuOpen(false)}>Features</NavLink>
-          <NavLink href="#characters" mobile onClick={() => setIsMenuOpen(false)}>Characters</NavLink>
-          <NavLink href="#newsletter" mobile onClick={() => setIsMenuOpen(false)}>Community</NavLink>
-          <div className="py-2">
-            {connected ? (
-              <WalletMultiButton className="!bg-purple-600 hover:!bg-purple-700 !rounded-full !w-full !font-medium" />
-            ) : (
+        {/* Mobile Menu */}
+        <div className={cn(
+          "md:hidden absolute left-0 right-0 bg-blue-500 shadow-md transition-all duration-300 overflow-hidden",
+          isMenuOpen ? "max-h-64 py-4" : "max-h-0"
+        )}>
+          <div className="flex flex-col space-y-4 px-4">
+            <a href="#" className="text-white hover:text-amber-200 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>Home</a>
+            <a href="#tokenomics" className="text-white hover:text-amber-200 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>Tokenomics</a>
+            <a href="#supply" className="text-white hover:text-amber-200 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>Supply</a>
+            <a href="#community" className="text-white hover:text-amber-200 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>Community</a>
+            <div className="py-2">
               <WalletButton isMobile />
-            )}
+            </div>
           </div>
         </div>
       </div>
     </nav>
-  );
-};
-
-interface NavLinkProps {
-  href: string;
-  children: React.ReactNode;
-  mobile?: boolean;
-  onClick?: () => void;
-}
-
-const NavLink = ({ href, children, mobile, onClick }: NavLinkProps) => {
-  return (
-    <a
-      href={href}
-      onClick={onClick}
-      className={cn(
-        'font-medium text-purple-100/90 hover:text-white transition-colors relative group',
-        mobile && 'py-2'
-      )}
-    >
-      {children}
-      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 transition-all group-hover:w-full"></span>
-    </a>
   );
 };
 

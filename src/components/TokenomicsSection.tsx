@@ -16,6 +16,46 @@ const TokenomicsSection = () => {
             className="max-w-xs"
           />
         </div>
+        
+        <div className="max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-6 bg-blue-50 rounded-lg shadow-md">
+              <h3 className="text-2xl font-bold text-blue-600 mb-4">Utility</h3>
+              <ul className="text-left space-y-2">
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">•</span>
+                  <span>Community governance</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">•</span>
+                  <span>Access to exclusive content</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">•</span>
+                  <span>Gaming rewards</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="p-6 bg-amber-50 rounded-lg shadow-md">
+              <h3 className="text-2xl font-bold text-amber-600 mb-4">Ecosystem</h3>
+              <ul className="text-left space-y-2">
+                <li className="flex items-start">
+                  <span className="text-amber-500 mr-2">•</span>
+                  <span>Built on Solana blockchain</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-amber-500 mr-2">•</span>
+                  <span>Fast transactions, low fees</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-amber-500 mr-2">•</span>
+                  <span>Community-driven development</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
