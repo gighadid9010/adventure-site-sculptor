@@ -52,127 +52,190 @@
 
 @layer base {
   body {
-    @apply bg-sky-400 text-foreground;
-    font-family: 'Arial', sans-serif;
+    @apply bg-[#121212] text-foreground;
   }
 }
 
-/* Beach Theme Colors */
-.bg-ocean-blue {
-  background-color: #69c5ff;
+/* Custom Solana-themed colors and styles */
+:root {
+  --solana-purple: #9945FF;
+  --solana-secondary-purple: #7E69AB;
+  --dark-purple: #1A1F2C;
+  --light-purple: #D6BCFA;
+  --charcoal-gray: #403E43;
+  --dark-charcoal: #121212;
 }
 
-.bg-sand {
-  background-color: #f8d38d;
+.text-solana-purple {
+  color: var(--solana-purple);
 }
 
-.text-ocean-blue {
-  color: #3B99DF;
+.bg-dark-charcoal {
+  background-color: var(--dark-charcoal);
 }
 
-.text-sand {
-  color: #f8d38d;
+/* Gradients */
+.bg-solana-gradient {
+  background: linear-gradient(135deg, var(--dark-charcoal) 0%, #2D1C4E 100%);
 }
 
-/* Animations */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+/* Glassmorphism Nav */
+.glassmorphism-dark {
+  background: rgba(20, 20, 30, 0.8);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(156, 104, 242, 0.1);
 }
 
-.animate-float {
-  animation: float 6s infinite ease-in-out;
+/* Animated Waves */
+.crypto-waves {
+  background: linear-gradient(45deg, rgba(156, 104, 242, 0.1) 0%, rgba(80, 56, 156, 0.2) 100%);
+  clip-path: polygon(0% 20%, 10% 40%, 20% 25%, 30% 35%, 40% 20%, 50% 40%, 60% 25%, 70% 35%, 80% 20%, 90% 35%, 100% 20%, 100% 100%, 0% 100%);
+  transform: translateY(0);
+  animation: wave 20s linear infinite;
 }
 
 @keyframes wave {
-  0%, 100% {
-    transform: translateY(0) scaleY(1);
+  0% {
+    transform: translateY(0) translateX(0);
   }
   50% {
-    transform: translateY(-5px) scaleY(1.05);
+    transform: translateY(-10px) translateX(-25px);
   }
-}
-
-.animate-wave {
-  animation: wave 8s infinite ease-in-out;
+  100% {
+    transform: translateY(0) translateX(0);
+  }
 }
 
 /* Bubble Animation */
-@keyframes bubble-rise {
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), rgba(156, 104, 242, 0.1));
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes bubble {
   0% {
     transform: translateY(0) scale(1);
-    opacity: 0.6;
   }
   100% {
-    transform: translateY(-100px) scale(1.5);
-    opacity: 0;
+    transform: translateY(-1000px) scale(0.5);
   }
 }
 
-.bubble {
-  animation: bubble-rise 15s infinite ease-out;
+/* Float Animations */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 
-.bubble:nth-child(2) {
-  animation-duration: 10s;
-  animation-delay: 2s;
+.animate-float-slow {
+  animation: float 8s ease-in-out infinite;
 }
 
-.bubble:nth-child(3) {
-  animation-duration: 12s;
-  animation-delay: 4s;
+.animate-float-fast {
+  animation: float 4s ease-in-out infinite;
 }
 
-/* Custom font sizes */
-.text-mega {
-  font-size: 5rem;
-  line-height: 1.1;
-  font-weight: 800;
+.animate-float-coin {
+  animation: floatCoin 5s ease-in-out infinite;
 }
 
-/* Wallet button styling */
-.wallet-adapter-button {
-  background-color: #f8d38d !important;
-  color: black !important;
-  font-weight: bold !important;
-  border: 2px solid black !important;
-  box-shadow: 2px 2px 0 black !important;
+.animate-float-coin-reverse {
+  animation: floatCoin 5s ease-in-out infinite reverse;
 }
 
-.wallet-adapter-dropdown {
-  background-color: transparent !important;
-}
-
-/* Custom shadows */
-.beach-shadow {
-  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
-}
-
-.text-shadow {
-  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
-}
-
-/* Custom animations for the beach elements */
-@keyframes sway {
-  0%, 100% {
-    transform: rotate(-3deg);
+@keyframes float {
+  0% {
+    transform: translateY(0);
   }
   50% {
-    transform: rotate(3deg);
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
-.palm-leaf {
-  transform-origin: bottom center;
-  animation: sway 10s ease-in-out infinite;
+@keyframes floatCoin {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
 }
 
-/* Cartoon-style borders */
-.cartoon-border {
-  border: 3px solid black;
-  box-shadow: 4px 4px 0 black;
+/* Slide Animations */
+.animate-slide-in-bottom {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideInBottom 0.6s forwards;
+}
+
+.animate-slide-in-right {
+  opacity: 0;
+  transform: translateX(40px);
+  animation: slideInRight 0.6s forwards;
+}
+
+@keyframes slideInBottom {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Shark Shadow */
+.shark-shadow {
+  filter: drop-shadow(0 10px 15px rgba(156, 104, 242, 0.35));
+}
+
+/* Button Styles */
+.btn-connect-wallet {
+  background-image: linear-gradient(to right, var(--solana-purple), #14F195);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-connect-wallet:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(156, 104, 242, 0.3);
+}
+
+.btn-play-now {
+  background-color: var(--solana-purple);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-play-now:hover {
+  background-color: #8934E0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(156, 104, 242, 0.3);
+}
+
+.btn-learn-more {
+  border: 2px solid var(--solana-purple);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s;
+  background-color: transparent;
+}
+
+.btn-learn-more:hover {
+  background-color: rgba(156, 104, 242, 0.1);
 }
