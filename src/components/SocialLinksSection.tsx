@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { WalletButton } from './WalletButton';
-import { Twitter, X, Instagram, Telegram } from 'lucide-react';
+import { Twitter, X, Instagram, MessageCircle } from 'lucide-react';
 
 const SocialLinksSection = () => {
   return (
@@ -19,7 +19,7 @@ const SocialLinksSection = () => {
           </a>
           
           <a href="https://t.me" target="_blank" rel="noopener noreferrer" className="bg-blue-500 rounded-full p-3 hover:opacity-80 transition-opacity">
-            <Telegram size={24} className="text-white" />
+            <MessageCircle size={24} className="text-white" />
           </a>
           
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-full p-3 hover:opacity-80 transition-opacity">
