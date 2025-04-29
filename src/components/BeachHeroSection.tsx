@@ -8,54 +8,15 @@ const BeachHeroSection = () => {
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-sky-400">
-      {/* Sky and clouds */}
+      {/* Sky and ocean background */}
       <div className="absolute inset-0 bg-gradient-to-b from-sky-300 to-sky-400"></div>
       
-      {/* Sand island */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <div className="h-64 bg-amber-200 rounded-tl-[100%] rounded-tr-[100%]"></div>
-      </div>
+      {/* Beach sand */}
+      <div className="absolute bottom-0 left-0 right-0 h-64 bg-amber-200 rounded-t-[50%]"></div>
       
-      {/* Left palm tree */}
-      <div className="absolute bottom-32 left-0">
-        <div className="relative">
-          <div className="w-8 h-32 bg-amber-800 skew-x-12 rounded-full"></div>
-          <div className="absolute -top-8 -left-12">
-            <div className="w-24 h-16 bg-green-600 rotate-12 rounded-full"></div>
-          </div>
-          <div className="absolute -top-12 -left-8">
-            <div className="w-32 h-16 bg-green-500 rotate-12 rounded-full"></div>
-          </div>
-          <div className="absolute -top-8 left-0">
-            <div className="w-32 h-16 bg-green-400 -rotate-12 rounded-full"></div>
-          </div>
-        </div>
-      </div>
+      {/* Ocean waves */}
+      <div className="absolute bottom-48 left-0 right-0 h-96 bg-blue-400"></div>
       
-      {/* Right palm tree */}
-      <div className="absolute bottom-32 right-0">
-        <div className="relative">
-          <div className="w-8 h-32 bg-amber-800 -skew-x-12 rounded-full"></div>
-          <div className="absolute -top-8 -right-12">
-            <div className="w-24 h-16 bg-green-600 -rotate-12 rounded-full"></div>
-          </div>
-          <div className="absolute -top-12 -right-8">
-            <div className="w-32 h-16 bg-green-500 -rotate-12 rounded-full"></div>
-          </div>
-          <div className="absolute -top-8 right-0">
-            <div className="w-32 h-16 bg-green-400 rotate-12 rounded-full"></div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Beach gradient water */}
-      <div className="absolute bottom-48 left-0 right-0 h-96 bg-gradient-to-t from-blue-400 to-blue-300"></div>
-      
-      {/* Water bubbles */}
-      <div className="absolute bottom-80 left-1/4 w-16 h-16 bg-blue-200 rounded-full opacity-30"></div>
-      <div className="absolute bottom-96 left-1/2 w-12 h-12 bg-blue-200 rounded-full opacity-30"></div>
-      <div className="absolute bottom-64 right-1/4 w-20 h-20 bg-blue-200 rounded-full opacity-30"></div>
-
       {/* Content container */}
       <div className="container mx-auto px-4 relative z-10 pt-20 pb-24 flex flex-col md:flex-row items-center">
         {/* Left content - Shark and info */}
@@ -88,14 +49,6 @@ const BeachHeroSection = () => {
               <p>1 Sol = 1.2 M SHAK</p>
               <p>2 Sol = 2.2 M SHAK</p>
               <p>5 Sol = 5.5 M SHAK</p>
-            </div>
-            
-            <div className="pt-4">
-              <img 
-                src="/lovable-uploads/129e008d-9055-46f9-8ca1-dabe6cef64c4.png" 
-                alt="Divider" 
-                className="mx-auto md:mx-0 h-6"
-              />
             </div>
           </div>
         </div>

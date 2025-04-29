@@ -21,6 +21,14 @@ const Footer = () => {
                 <li><a href="#community" className="text-blue-100 hover:text-white">Community</a></li>
               </ul>
             </div>
+            <div>
+              <h4 className="font-bold mb-2">Social Media</h4>
+              <ul className="space-y-1">
+                <li><a href="https://twitter.com" className="text-blue-100 hover:text-white">Twitter</a></li>
+                <li><a href="https://t.me" className="text-blue-100 hover:text-white">Telegram</a></li>
+                <li><a href="https://instagram.com" className="text-blue-100 hover:text-white">Instagram</a></li>
+              </ul>
+            </div>
           </div>
         </div>
         

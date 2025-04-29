@@ -1,16 +1,16 @@
 
 import React from 'react';
 import { WalletButton } from './WalletButton';
-import { Twitter, X, Instagram } from 'lucide-react';
+import { Twitter, X, Instagram, Telegram } from 'lucide-react';
 
 const SocialLinksSection = () => {
   return (
-    <div className="py-16 bg-white">
+    <div className="py-16 bg-white" id="community">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-8">Join Our Community</h2>
         
         <div className="flex justify-center space-x-8 mb-12">
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="bg-black rounded-full p-3 hover:opacity-80 transition-opacity">
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="bg-blue-400 rounded-full p-3 hover:opacity-80 transition-opacity">
             <Twitter size={24} className="text-white" />
           </a>
           
@@ -18,7 +18,11 @@ const SocialLinksSection = () => {
             <X size={24} className="text-white" />
           </a>
           
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="bg-black rounded-full p-3 hover:opacity-80 transition-opacity">
+          <a href="https://t.me" target="_blank" rel="noopener noreferrer" className="bg-blue-500 rounded-full p-3 hover:opacity-80 transition-opacity">
+            <Telegram size={24} className="text-white" />
+          </a>
+          
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-full p-3 hover:opacity-80 transition-opacity">
             <Instagram size={24} className="text-white" />
           </a>
         </div>

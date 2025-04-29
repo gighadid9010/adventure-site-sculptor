@@ -3,7 +3,7 @@ import React from 'react';
 
 const TokenomicsSection = () => {
   return (
-    <div className="py-16 bg-white">
+    <div className="py-16 bg-white" id="tokenomics">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-5xl font-bold mb-12 text-amber-400" style={{ textShadow: '1px 1px 0 #3B82F6, -1px 1px 0 #3B82F6, 1px -1px 0 #3B82F6, -1px -1px 0 #3B82F6' }}>
           TOKENOMICS

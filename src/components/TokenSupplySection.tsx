@@ -3,7 +3,7 @@ import React from 'react';
 
 const TokenSupplySection = () => {
   return (
-    <div className="py-16 bg-amber-200">
+    <div className="py-16 bg-amber-200" id="supply">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-5xl font-bold mb-8 text-blue-500" style={{ textShadow: '1px 1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff' }}>
           TOKEN SUPPLY

@@ -10,7 +10,6 @@ import Footer from '@/components/Footer';
 const Index = () => {
   return (
     <div className="min-h-screen bg-sky-400 relative overflow-x-hidden">
-      {/* Beach background with palm trees */}
       <Navbar />
       <BeachHeroSection />
       <TokenomicsSection />
