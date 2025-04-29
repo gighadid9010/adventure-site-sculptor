@@ -27,12 +27,13 @@ export const WalletButton = ({ isMobile = false }: WalletButtonProps) => {
     <Button 
       onClick={openWalletModal}
       className={cn(
-        'rounded-full px-6 py-2 font-medium transition-all duration-300',
+        'rounded-md px-6 py-2 font-bold transition-all duration-300 border-2 border-black',
         connected 
-          ? 'bg-purple-600 hover:bg-purple-700 text-white' 
-          : 'bg-gradient-to-r from-purple-600 to-purple-400 hover:from-purple-700 hover:to-purple-500 text-white',
+          ? 'bg-amber-400 hover:bg-amber-500 text-black' 
+          : 'bg-amber-400 hover:bg-amber-500 text-black',
         isMobile && 'w-full'
       )}
+      style={{ boxShadow: '2px 2px 0 #000' }}
     >
       {connected ? (
         <>
@@ -48,3 +49,5 @@ export const WalletButton = ({ isMobile = false }: WalletButtonProps) => {
     </Button>
   );
 };
+
+export default WalletButton;
